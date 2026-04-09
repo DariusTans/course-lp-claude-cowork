@@ -62,18 +62,18 @@ export default function InstructorSection() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-body text-2xl">⚙️</span>
-                <p className="font-body text-brand-warm/80">Engineer & Educator มากกว่า 10 ปี</p>
+                <p className="font-body text-brand-warm/80">ประสบการณ์ในวงการ AI และ Software มามากกว่า 10 ปี</p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-body text-2xl">🤖</span>
-                <p className="font-body text-brand-warm/80">ผู้เชี่ยวชาญ Claude · Claude Code · Claude Cowork</p>
+                <p className="font-body text-brand-warm/80">ผู้เชี่ยวชาญ Claude · Claude Code · Claude Cowork จากหลักการสร้างสู้ใช้งานจริง</p>
               </div>
             </div>
 
             {/* Quote */}
             <blockquote className="border-l-4 border-brand-yellow pl-5 py-2">
               <p className="font-body text-brand-warm/70 text-base italic leading-relaxed">
-                "AI ต้องทำให้คนฉลาดขึ้น ไม่ใช่แทนที่การคิด"
+                "AI ต้องทำให้คนฉลาดขึ้น ไม่ใช่ทำให้คนโง่ลง"
               </p>
             </blockquote>
 
@@ -81,7 +81,7 @@ export default function InstructorSection() {
             <div className="flex gap-8 pt-2">
               {[
                 { value: "10+", label: "ปีประสบการณ์" },
-                { value: "500+", label: "นักเรียน" },
+                { value: "1500+", label: "นักเรียน" },
                 { value: "#1", label: "Super AI Engineer" },
               ].map((stat) => (
                 <div key={stat.label}>

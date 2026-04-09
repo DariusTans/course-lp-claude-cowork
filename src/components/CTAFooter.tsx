@@ -28,8 +28,8 @@ export default function CTAFooter() {
             <p className="font-body text-brand-warm/50 text-lg">
               {COURSE_CONFIG.date} · {COURSE_CONFIG.time}
               <br />
-              Early Bird เหลือ <span className="text-brand-yellow font-semibold">50 ที่</span> · ราคา{" "}
-              <span className="text-brand-orange font-semibold">1,490 ฿</span>
+              Early Bird เหลือ <span className="text-brand-yellow font-semibold">{COURSE_CONFIG.seats} ที่</span> · ราคา{" "}
+              <span className="text-brand-orange font-semibold">{COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿</span>
             </p>
           </motion.div>
 
@@ -47,7 +47,7 @@ export default function CTAFooter() {
               transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               className="inline-block font-display font-bold text-lg md:text-xl px-10 py-5 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              จองที่นั่ง Early Bird 1,490 ฿ →
+              จองที่นั่ง Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
             </motion.a>
           </motion.div>
 

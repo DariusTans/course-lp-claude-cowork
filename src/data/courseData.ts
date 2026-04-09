@@ -1,18 +1,19 @@
 export const COURSE_CONFIG = {
   title: "Claude ใช้เป็น ธุรกิจไปได้เอง",
-  tagline: "เปิด Claude เป็น — แล้วธุรกิจจะไม่เหมือนเดิม",
+  tagline: "เปิด Claude เป็น — แล้วการทำงานของคุณจะไม่เหมือนเดิม",
   tools: ["Claude", "Claude Code", "Claude Cowork"] as const,
   date: "เสาร์ที่ 25 เมษายน 2026",
   time: "10:00–16:00 น.",
-  platform: "Live สอนสด",
+  platform: "Live สอนสด ผ่าน Zoom",
+  platformNote: "Zoom link จะส่งให้ทางอีเมล์ภายก่อนวัน live จริง และจะมีให้เตรียมตัวก่อนเริ่มคอร์ส",
   seats: 30,
   pricing: {
     earlyBird: 1490,
     regular: 3000,
   },
   eventDate: new Date("2026-04-25T10:00:00+07:00"),
-  registerUrl: "#register",
-  contactEmail: "hello@claudecowork.com",
+  registerUrl: "https://forms.gle/oaxYstn4rxqcU6Zc8",
+  contactEmail: "phonratichai.influencer@gmail.com",
 }
 
 export const CURRICULUM = [
@@ -118,6 +119,14 @@ export const SKILLS = [
 
 export const FAQS = [
   {
+    q: "คอร์สนี้เหมาะกับใคร?",
+    a: "สำหรับคนเพิ่งเริ่มหรือใช้งาน Claude อยู่แล้ว แต่ยังใช้ได้ไม่ถึง 10% ของที่มันทำได้ — ไม่ว่าจะเป็นเจ้าของธุรกิจ, marketer, content creator, หรือใครก็ตามที่อยากใช้ AI ให้เกิดประโยชน์จริงๆ ในชีวิตและงาน",
+  },
+  {
+    q: `ทำไมจำกัดที่นั่งแค่ ${COURSE_CONFIG.seats} ที่?`,
+    a: "เราอยากให้เป็นคอร์สที่ interactive — ถามตอบได้, สาธิตให้ดูได้, และช่วยแก้ปัญหาเฉพาะของแต่ละคนได้จริงๆ ระหว่าง Live ซึ่งทำได้ดีที่สุดในกลุ่มเล็กๆ เท่านั้น",
+  },
+  {
     q: "ต้องมีพื้นฐานโค้ดไหม?",
     a: "ไม่ต้องเลย Live นี้ออกแบบสำหรับคนที่ไม่มีพื้นฐานโค้ด เนื้อหาเน้นการใช้งานจริงในธุรกิจ ไม่ใช่การเขียนโปรแกรม",
   },
@@ -130,12 +139,16 @@ export const FAQS = [
     a: "Claude Code คือ tool ที่ให้ Claude ช่วย build ของจริง เช่น website, app, prototype — โดยคุณแค่บอกว่าอยากได้อะไร ไม่ต้องรู้ code เลย จะสาธิต live ระหว่างคอร์ส",
   },
   {
+    q: "เรียนที่ไหน? ต้องเดินทางไหม?",
+    a: "เรียนผ่าน Zoom ที่บ้านหรือที่ไหนก็ได้ หลังจากจองและชำระเงินแล้ว Zoom link จะถูกส่งให้ทางอีเมล์ที่ลงทะเบียนไว้ก่อนวันงาน",
+  },
+  {
     q: "ใช้ Mac หรือ Windows ได้ไหม?",
-    a: "ได้ทั้งคู่ ตราบใดที่มี browser และ internet ก็เข้าร่วมได้",
+    a: "ได้ทั้งคู่ ตราบใดที่มี browser, Zoom, และ internet ก็เข้าร่วมได้เลย",
   },
   {
     q: "ถ้าตามไม่ทัน Live ทำยังไง?",
-    a: "มี recording ย้อนหลังให้ดูได้ ไม่จำกัดเวลา",
+    a: "เราจะอัดวิดิโอ ไว้ให้แล้วส่งให้ทุกคนหลังจบคอร์ส สามารถกลับไปดูซ้ำได้ตลอดเวลา ไม่ต้องกลัวตามไม่ทันระหว่าง Live",
   },
   {
     q: "Refund policy เป็นอย่างไร?",

@@ -40,7 +40,7 @@ export default function PricingSection() {
           >
             <div className="absolute -top-3 left-6">
               <span className="font-body text-xs font-bold bg-brand-orange text-white px-3 py-1">
-                🔥 50 ที่แรกเท่านั้น
+                🔥 {COURSE_CONFIG.seats} ที่แรกเท่านั้น
               </span>
             </div>
 
