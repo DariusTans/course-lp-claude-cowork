@@ -1,4 +1,74 @@
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
+const images = ["/profile1.jpg", "/profile2.jpg", "/profile3.jpg"]
+
+function ImageSlider() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length)
+    }, 3500)
+    return () => clearInterval(id)
+  }, [])
+
+  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length)
+  const next = () => setCurrent((c) => (c + 1) % images.length)
+
+  return (
+    <div className="relative w-72 h-72 md:w-96 md:h-96">
+      {/* Image */}
+      <div className="w-full h-full border border-brand-yellow/20 overflow-hidden bg-gradient-to-br from-brand-yellow/20 to-brand-orange/20">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current}
+            src={images[current]}
+            alt={`Instructor ${current + 1}`}
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.45, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Prev / Next */}
+      <button
+        onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-white/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
+      >
+        <ChevronLeft className="w-4 h-4" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-white/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
+      >
+        <ChevronRight className="w-4 h-4" />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-colors ${
+              i === current ? "bg-brand-yellow" : "bg-brand-warm/20"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Badge */}
+      <div className="absolute -bottom-3 -right-3 border border-brand-yellow/30 bg-brand-yellow/10 px-3 py-1.5">
+        <span className="font-display font-bold text-brand-yellow text-xs">🥇 อันดับ 1 ของประเทศ</span>
+      </div>
+    </div>
+  )
+}
 
 export default function InstructorSection() {
   return (
@@ -19,8 +89,8 @@ export default function InstructorSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Avatar placeholder */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Slider */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -28,15 +98,7 @@ export default function InstructorSection() {
             transition={{ duration: 0.5 }}
             className="flex justify-center md:justify-start"
           >
-            <div className="relative">
-              <div className="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-br from-brand-yellow/20 to-brand-orange/20 border border-brand-yellow/20 flex items-center justify-center">
-                {/* TODO: replace with real instructor photo */}
-                <span className="text-6xl">🧑‍💻</span>
-              </div>
-              <div className="absolute -bottom-3 -right-3 border border-brand-yellow/30 bg-brand-yellow/10 px-3 py-1.5">
-                <span className="font-display font-bold text-brand-yellow text-xs">🥇 อันดับ 1 ของประเทศ</span>
-              </div>
-            </div>
+            <ImageSlider />
           </motion.div>
 
           {/* Bio */}
@@ -49,7 +111,6 @@ export default function InstructorSection() {
           >
             <div>
               <p className="font-body text-brand-warm/50 text-sm mb-1">วิทยากร</p>
-              {/* TODO: replace with real instructor name */}
               <h3 className="font-display font-bold text-brand-warm text-2xl md:text-3xl">
                 Super AI Engineer
               </h3>

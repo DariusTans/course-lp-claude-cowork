@@ -5,6 +5,7 @@ import WhatYouGetSection from "./components/WhatYouGetSection"
 import SkillSection from "./components/SkillSection"
 import CurriculumSection from "./components/CurriculumSection"
 import InstructorSection from "./components/InstructorSection"
+import ReviewSection from "./components/ReviewSection"
 import PricingSection from "./components/PricingSection"
 import FAQSection from "./components/FAQSection"
 import CTAFooter from "./components/CTAFooter"
@@ -19,6 +20,7 @@ export default function App() {
       <SkillSection />
       <CurriculumSection />
       <InstructorSection />
+      <ReviewSection />
       <PricingSection />
       <FAQSection />
       <CTAFooter />
