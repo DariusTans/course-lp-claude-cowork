@@ -78,9 +78,9 @@ export default function HeroSection() {
 
           {/* Headline */}
           <motion.h1 variants={fadeUp} className="font-display font-extrabold leading-none tracking-tight">
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">เปิด Claude เป็น —</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-yellow">แล้วธุรกิจจะ</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">ไม่เหมือนเดิม</span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">เรียนรู้ AI ด้วย Claude</span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-yellow">สำหรับผู้เริ่มต้น-</span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">ใช้ AI ได้เก่งกว่าคนอื่น</span>
           </motion.h1>
 
           {/* Tools badges */}
