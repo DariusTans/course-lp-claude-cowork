@@ -21,9 +21,8 @@ export default function CTAFooter() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display font-extrabold text-4xl md:text-6xl text-brand-warm leading-tight mb-4">
-              จองที่นั่ง —<br />
-              <span className="text-brand-yellow">ก่อนที่คนอื่น</span>จะเห็นภาพ<br />
-              ก่อนคุณ
+              คุณคิดมาพอแล้ว ถึงเวลา
+              <span className="text-brand-yellow">ลงมือทำสักที</span>
             </h2>
             <p className="font-body text-brand-warm/50 text-lg">
               {COURSE_CONFIG.date} · {COURSE_CONFIG.time}
@@ -66,7 +65,7 @@ export default function CTAFooter() {
       <footer className="bg-brand-dark border-t border-white/5 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-display font-bold text-brand-yellow text-lg">CLAUDE COWORK</p>
+            <p className="font-display font-bold text-brand-yellow text-lg">CLAUDE CODE - Build & Sell</p>
             <p className="font-body text-brand-warm/30 text-xs mt-1">
               เรียนรู้ Claude · Claude Code · Claude Cowork
             </p>

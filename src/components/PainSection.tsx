@@ -3,15 +3,27 @@ import { motion } from "framer-motion"
 const pains = [
   {
     emoji: "😤",
-    text: "เคยลอง Claude แล้ว แต่ยังมองภาพไม่ออกว่าจะเอาไปใช้ในธุรกิจยังไง",
+    heading: "คุณเคยคิดอยากทำอะไรสักอย่าง",
+    items: ["chatbot สำหรับธุรกิจ", "ระบบจอง", "หรือ tool เล็กๆ ของตัวเอง"],
+    punchline: "มันก็ยังเป็นแค่ ไอเดียในหัว",
   },
   {
     emoji: "⏰",
-    text: "งานที่ทำซ้ำๆ ทุกวัน ยังทำด้วยมืออยู่ ทั้งที่ Claude ทำแทนได้",
+    heading: "คุณลองใช้ AI แล้ว",
+    items: ["เล่น Claude", "ลอง prompt", "ดูคลิปมาเยอะ"],
+    punchline: "ก็ยังงง ไม่รู้จะเริ่มตรงไหน",
+  },
+  {
+    emoji: "🧠",
+    heading: "คุณรู้สึกว่า…",
+    items: ["ตัวเองก็สาย tech", "เข้าใจอะไรพวกนี้ระดับหนึ่ง"],
+    punchline: "ยังไม่มี product ของตัวเองสักตัว",
   },
   {
     emoji: "💸",
-    text: "อยากสร้าง prototype หรือหน้าเว็บ แต่ไม่รู้ code และไม่อยากจ้าง dev",
+    heading: "คุณอยากมีอะไรเป็นของตัวเอง แต่ติดว่า:",
+    items: ["ไม่อยากเขียนโค้ดเอง", "ไม่อยากจ้าง dev หลักหมื่นหลักแสน", "และไม่อยากเสียเวลาเดาไปเรื่อย"],
+    punchline: null,
   },
 ]
 
@@ -33,21 +45,25 @@ export default function PainSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mb-12"
         >
           <p className="font-body text-brand-yellow text-sm font-semibold tracking-widest uppercase mb-4">
-            Pain Point
+            💣 Pain Point
           </p>
-          <h2 className="font-display font-bold text-3xl md:text-5xl text-brand-warm leading-tight mb-4">
-            คุณอยู่ตรงนี้ไหม?
+          <h2 className="font-display font-bold text-3xl md:text-5xl text-brand-warm leading-tight mb-6">
+            คุณอยู่ในจุดนี้ไหม?
           </h2>
-          <p className="font-body text-brand-warm/50 text-lg mb-12 max-w-xl">
-            คนส่วนใหญ่อยู่ใน zone นี้ —&nbsp;
-            <span className="text-brand-warm/80 font-medium italic">"aware but stuck"</span>
-            &nbsp;รู้จัก Claude อยู่แล้ว แต่ใช้ได้ไม่ถึง 10% ของที่มันทำได้
+          <p className="font-body text-brand-warm/60 text-lg max-w-xl">
+            คนส่วนใหญ่ที่สนใจ AI ตอนนี้… ไม่ได้ไม่เก่ง
+            <br />
+            แต่ติดอยู่ในจุดที่เรียกว่า
+          </p>
+          <p className="font-display font-bold text-xl md:text-2xl text-brand-yellow mt-3">
+            "มีไอเดีย…แต่ไม่เคยสร้างมันออกมาได้จริง"
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {pains.map((pain, i) => (
             <motion.div
               key={i}
@@ -59,20 +75,60 @@ export default function PainSection() {
               className="border border-white/10 bg-white/3 p-8 flex flex-col gap-4 hover:border-brand-yellow/30 transition-colors"
             >
               <span className="text-4xl">{pain.emoji}</span>
-              <p className="font-body text-brand-warm/80 text-base leading-relaxed">{pain.text}</p>
+              <p className="font-body text-brand-warm font-semibold text-base">{pain.heading}</p>
+              <ul className="font-body text-brand-warm/70 text-sm space-y-1">
+                {pain.items.map((item, j) => (
+                  <li key={j} className="flex items-start gap-2">
+                    <span className="mt-1 text-brand-warm/40">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {pain.punchline && (
+                <p className="font-body text-brand-yellow font-semibold text-sm mt-2">
+                  ❗ {pain.punchline}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-12 border border-white/10 bg-white/3 p-8 text-center"
+        >
+          <p className="font-body text-brand-warm/60 text-base mb-2">🔥 สุดท้ายมันจบที่</p>
+          <p className="font-display font-bold text-xl md:text-2xl text-brand-warm">
+            คุณมี{" "}
+            <span className="text-brand-yellow">"ความสามารถ"</span>
+            <br />
+            แต่ยังไม่มี{" "}
+            <span className="text-brand-yellow">"ของจริง"</span>{" "}
+            ที่ใช้ต่อยอดเป็นธุรกิจได้
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="font-display font-bold text-xl md:text-2xl text-brand-yellow mt-12 text-center"
+          className="mt-8 text-center"
         >
-          Live นี้สร้างมาเพื่อคุณโดยเฉพาะ
-        </motion.p>
+          <p className="font-body text-brand-warm/50 text-sm uppercase tracking-widest mb-3">
+            🚀 Transition
+          </p>
+          <p className="font-body text-brand-warm/70 text-lg mb-2">
+            Workshop นี้ ถูกสร้างมาเพื่อแก้ปัญหานี้โดยตรง
+          </p>
+          <p className="font-body text-brand-warm/60 text-base mb-4">ไม่ใช่แค่สอน AI แต่พาคุณ:</p>
+          <p className="font-display font-bold text-xl md:text-2xl text-brand-yellow">
+            🔥 จาก "มีไอเดีย" → "มี AI Product + ระบบขายจริง"
+          </p>
+        </motion.div>
       </div>
     </section>
   )

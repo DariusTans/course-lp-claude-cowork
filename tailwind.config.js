@@ -12,8 +12,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["IBM Plex Sans Thai", "sans-serif"],
+        body: ["IBM Plex Sans Thai", "sans-serif"],
       },
     },
   },

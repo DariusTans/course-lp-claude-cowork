@@ -78,9 +78,8 @@ export default function HeroSection() {
 
           {/* Headline */}
           <motion.h1 variants={fadeUp} className="font-display font-extrabold leading-none tracking-tight">
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">เรียนรู้ AI ด้วย Claude</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-yellow">สำหรับผู้เริ่มต้น-</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">ใช้ AI ได้เก่งกว่าคนอื่น</span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl text-brand-warm">{COURSE_CONFIG.title}</span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl text-brand-yellow mt-4">{COURSE_CONFIG.tagline}</span>
           </motion.h1>
 
           {/* Tools badges */}
@@ -92,8 +91,7 @@ export default function HeroSection() {
 
           {/* Sub-headline */}
           <motion.p variants={fadeUp} className="font-body text-brand-warm/70 text-lg md:text-xl max-w-xl leading-relaxed">
-            สำหรับคนที่เปิด Claude อยู่แล้ว แต่ยังใช้ได้ไม่ถึง&nbsp;
-            <span className="text-brand-yellow font-semibold">10%</span> ของที่มันทำได้
+            สำหรับคนที่มีไอเดียอยากสร้างอะไรสักอย่าง… แต่ยังไม่รู้จะเริ่มยังไงให้มันเกิดขึ้นจริง
           </motion.p>
 
           {/* Date + countdown */}

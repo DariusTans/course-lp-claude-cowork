@@ -19,7 +19,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="font-display font-bold text-brand-yellow text-xl tracking-tight">
-          CLAUDE COWORK
+          CLAUDE CODE - Build & Sell 
         </a>
 
         {/* Desktop nav */}
