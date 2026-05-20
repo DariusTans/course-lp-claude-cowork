@@ -63,6 +63,20 @@ export default function PainSection() {
           </p>
         </motion.div>
 
+        {/* link to FreePreviewSection */}
+        <div className="mt-8 ">
+          <motion.a
+            href="#free-preview"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block font-display font-bold text-sm px-6 py-3 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
+          >
+            กลัวเรียนไม่รู้เรื่อง ?
+          </motion.a>
+        </div>
+
+        <br />
+
         <div className="grid md:grid-cols-2 gap-4">
           {pains.map((pain, i) => (
             <motion.div

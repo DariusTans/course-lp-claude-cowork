@@ -12,7 +12,7 @@ export const COURSE_CONFIG = {
     regular: 1990,
   },
   eventDate: new Date("2026-05-31T23:59:00+07:00"),
-  registerUrl: "https://forms.gle/oaxYstn4rxqcU6Zc8",
+  registerUrl: "https://forms.gle/s3XrhBMUZTEJD2Lz6",
   contactEmail: "phonratichai.influencer@gmail.com",
 }
 

@@ -101,7 +101,7 @@ export default function HeroSection() {
               <span className="ml-2 text-brand-warm/40">· {COURSE_CONFIG.platform}</span>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="font-body text-brand-warm/30 text-xs">Early Bird หมดใน</span>
+              <span className="font-body text-brand-warm/30 text-xs">จะปรับราคาขึ้นใน</span>
               <Countdown target={COURSE_CONFIG.eventDate} />
             </div>
           </motion.div>
