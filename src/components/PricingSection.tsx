@@ -3,11 +3,11 @@ import { Check } from "lucide-react"
 import { COURSE_CONFIG } from "../data/courseData"
 
 const earlyBirdFeatures = [
-  "Live สอนสด 6 ชั่วโมง",
+  "วิดีโอ recording จากการสอน live จริง",
   "เรียน Claude · Claude Code · Claude Cowork",
-  "สร้าง Skill ของตัวเองระหว่าง Live",
-  "Recording ย้อนหลัง",
-  "Q&A session ตรงๆ กับวิทยากร",
+  "ดูซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ",
+  "Pre-setup guide พร้อม Claude Code Skills แจก",
+  "เรียนได้ทันทีหลังชำระเงิน",
 ]
 
 export default function PricingSection() {
@@ -25,7 +25,7 @@ export default function PricingSection() {
             Pricing
           </p>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-brand-warm leading-tight">
-            Early Bird ก่อนที่คนอื่นจะ<br className="hidden md:block" />เห็นภาพก่อนคุณ
+            ราคา Early Bird<br className="hidden md:block" />ก่อนขึ้นราคาปกติ
           </h2>
         </motion.div>
 
@@ -40,7 +40,7 @@ export default function PricingSection() {
           >
             <div className="absolute -top-3 left-6">
               <span className="font-body text-xs font-bold bg-brand-orange text-white px-3 py-1">
-                🔥 {COURSE_CONFIG.seats} ที่แรกเท่านั้น
+                🔥 {COURSE_CONFIG.seats} คนแรกเท่านั้น
               </span>
             </div>
 
@@ -75,7 +75,7 @@ export default function PricingSection() {
               whileTap={{ scale: 0.98 }}
               className="mt-auto block font-display font-bold text-center py-4 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              จองที่นั่ง Early Bird →
+              ซื้อคอร์ส Early Bird →
             </motion.a>
 
             <p className="font-body text-brand-warm/40 text-xs text-center">
@@ -99,7 +99,7 @@ export default function PricingSection() {
                 </span>
                 <span className="font-body text-brand-warm/40 mb-2">฿</span>
               </div>
-              <p className="font-body text-brand-warm/30 text-sm">เมื่อที่ Early Bird เต็ม</p>
+              <p className="font-body text-brand-warm/30 text-sm">เมื่อ Early Bird หมด</p>
             </div>
 
             <ul className="flex flex-col gap-3">
@@ -122,14 +122,31 @@ export default function PricingSection() {
           </motion.div>
         </div>
 
+        {/* Upsell note */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 border border-brand-yellow/20 bg-brand-yellow/5 px-6 py-4 max-w-3xl mx-auto text-center"
+        >
+          <p className="font-body text-brand-yellow text-sm font-semibold mb-1">
+            ⚠️ ราคานี้จะขึ้นในอนาคต
+          </p>
+          <p className="font-body text-brand-warm/60 text-sm">
+            คอร์สนี้กำลังจะมีของแถมและเนื้อหาเพิ่มเติม — ราคาจะปรับขึ้นตามมูลค่าที่เพิ่ม
+            <br />
+            คนที่ซื้อตอนนี้ได้ราคานี้ไปตลอด และได้รับของแถมใหม่ทุกอย่างฟรี
+          </p>
+        </motion.div>
+
         {/* Guarantee note */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center font-body text-brand-warm/40 text-sm mt-8"
+          className="text-center font-body text-brand-warm/40 text-sm mt-4"
         >
-          🔒 Refund เต็มจำนวนหากยกเลิกก่อน 7 วันก่อนวันงาน
+          🔒 เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน · ดูซ้ำได้ไม่จำกัด
         </motion.p>
       </div>
     </section>

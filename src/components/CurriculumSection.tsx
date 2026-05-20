@@ -21,7 +21,7 @@ export default function CurriculumSection() {
             Curriculum
           </p>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-brand-warm leading-tight">
-            6 ชั่วโมง เต็มๆ
+            เนื้อหาทั้งหมดที่จะได้เรียน
           </h2>
         </motion.div>
 
@@ -36,7 +36,6 @@ export default function CurriculumSection() {
                   key={i}
                   className="border border-white/5 bg-white/2 px-6 py-4 flex items-center gap-4"
                 >
-                  <span className="font-mono text-xs text-brand-warm/30 w-24 flex-shrink-0">{item.time}</span>
                   <span className="font-body text-brand-warm/30 text-sm">☕ พักกลางวัน</span>
                 </div>
               )
@@ -57,7 +56,6 @@ export default function CurriculumSection() {
                   className="w-full text-left px-6 py-5 flex items-start gap-4"
                   onClick={() => setOpenIdx(isOpen ? null : i)}
                 >
-                  <span className="font-mono text-xs text-brand-warm/30 w-24 flex-shrink-0 pt-1">{item.time}</span>
                   <div className="flex-1 flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
                     <div className="flex items-center gap-3 flex-1">
                       <div>
@@ -68,7 +66,7 @@ export default function CurriculumSection() {
                           {item.tool === "Q&A" && (
                             <ToolBadge tool="Q&A" />
                           )}
-                          <span className="font-body text-brand-warm/40 text-xs">ช่วงที่ {item.session}</span>
+                          <span className="font-body text-brand-warm/40 text-xs">{item.time}</span>
                         </div>
                         <p className="font-display font-bold text-brand-warm text-base md:text-lg">
                           "{item.title}"
@@ -90,7 +88,7 @@ export default function CurriculumSection() {
                       transition={{ duration: 0.25, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pl-[7.5rem]">
+                      <div className="px-6 pb-6">
                         <p className="font-body text-brand-warm/60 text-sm mb-4 leading-relaxed">
                           {item.description}
                         </p>

@@ -27,7 +27,7 @@ export default function CTAFooter() {
             <p className="font-body text-brand-warm/50 text-lg">
               {COURSE_CONFIG.date} · {COURSE_CONFIG.time}
               <br />
-              Early Bird เหลือ <span className="text-brand-yellow font-semibold">{COURSE_CONFIG.seats} ที่</span> · ราคา{" "}
+              Early Bird <span className="text-brand-yellow font-semibold">{COURSE_CONFIG.seats} คนแรก</span> · ราคา{" "}
               <span className="text-brand-orange font-semibold">{COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿</span>
             </p>
           </motion.div>
@@ -46,7 +46,7 @@ export default function CTAFooter() {
               transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               className="inline-block font-display font-bold text-lg md:text-xl px-10 py-5 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              จองที่นั่ง Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
+              ซื้อคอร์ส Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
             </motion.a>
           </motion.div>
 
@@ -56,7 +56,7 @@ export default function CTAFooter() {
             viewport={{ once: true }}
             className="font-body text-brand-warm/30 text-xs"
           >
-            🔒 Refund เต็มจำนวนหากยกเลิกก่อน 7 วัน · PromptPay · โอนธนาคาร · บัตรเครดิต
+            🔒 เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน · ดูซ้ำได้ไม่จำกัด · PromptPay · โอนธนาคาร · บัตรเครดิต
           </motion.p>
         </div>
       </section>

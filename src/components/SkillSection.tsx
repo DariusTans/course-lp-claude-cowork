@@ -118,9 +118,9 @@ export default function SkillSection() {
             </p>
           </div>
           <div className="flex-shrink-0 border-l border-white/10 md:pl-8">
-            <p className="font-body text-brand-warm/50 text-xs mb-1">เป้าหมายของ Live นี้</p>
+            <p className="font-body text-brand-warm/50 text-xs mb-1">เป้าหมายของคอร์สนี้</p>
             <p className="font-display font-bold text-brand-yellow text-sm">
-              คุณจะสร้าง Skill ของตัวเอง<br />อย่างน้อย 1 ตัวก่อนกลับบ้าน
+              คุณจะสร้าง Skill ของตัวเอง<br />อย่างน้อย 1 ตัวได้เลย
             </p>
           </div>
         </motion.div>

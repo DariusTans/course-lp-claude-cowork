@@ -72,7 +72,7 @@ export default function HeroSection() {
           {/* Badge */}
           <motion.div variants={fadeUp}>
             <span className="inline-flex items-center gap-2 font-body text-xs font-semibold tracking-widest uppercase text-brand-yellow border border-brand-yellow/30 bg-brand-yellow/10 px-4 py-1.5">
-              🔴 LIVE สอนสด ผ่าน Zoom · 6 ชั่วโมง · จำกัด {COURSE_CONFIG.seats} ที่
+              🎬 Video Online · เรียนได้ทันที · ดูซ้ำได้ไม่จำกัด · {COURSE_CONFIG.seats} คนแรก Early Bird
             </span>
           </motion.div>
 
@@ -98,15 +98,17 @@ export default function HeroSection() {
           <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
             <div className="font-body text-brand-warm/60 text-sm">
               <span className="text-brand-warm font-semibold">{COURSE_CONFIG.date}</span>
-              {" · "}{COURSE_CONFIG.time}
               <span className="ml-2 text-brand-warm/40">· {COURSE_CONFIG.platform}</span>
             </div>
-            <Countdown target={COURSE_CONFIG.eventDate} />
+            <div className="flex flex-col gap-1">
+              <span className="font-body text-brand-warm/30 text-xs">Early Bird หมดใน</span>
+              <Countdown target={COURSE_CONFIG.eventDate} />
+            </div>
           </motion.div>
 
           {/* Platform note */}
           <motion.div variants={fadeUp} className="flex items-center gap-2">
-            <span className="text-brand-warm/30 text-sm">📧</span>
+            <span className="text-brand-warm/30 text-sm">🎬</span>
             <p className="font-body text-brand-warm/40 text-xs">{COURSE_CONFIG.platformNote}</p>
           </motion.div>
 
@@ -118,7 +120,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               className="inline-block font-display font-bold text-base md:text-lg px-8 py-4 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              จองที่นั่ง Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
+              ซื้อคอร์ส Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
             </motion.a>
             <div className="font-body text-brand-warm/50 text-sm self-center">
               <s className="text-brand-warm/30">ปกติ {COURSE_CONFIG.pricing.regular.toLocaleString()} ฿</s>

@@ -37,7 +37,7 @@ export default function Navbar() {
             href={COURSE_CONFIG.registerUrl}
             className="font-body font-semibold text-sm px-5 py-2.5 border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-200"
           >
-            จองที่นั่ง Early Bird
+            ซื้อคอร์ส Early Bird
           </a>
         </div>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
             className="font-body font-semibold text-sm px-5 py-2.5 border border-brand-orange text-brand-orange text-center"
             onClick={() => setMenuOpen(false)}
           >
-            จองที่นั่ง Early Bird
+            ซื้อคอร์ส Early Bird
           </a>
         </div>
       )}
