@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { COURSE_CONFIG } from "../data/courseData"
+import { COURSE_CONFIG, MODE, ACTIVE_PRICE } from "../data/courseData"
 import { ToolBadge } from "./ClaudeIcons"
 
 function Countdown({ target }: { target: Date }) {
@@ -72,7 +72,7 @@ export default function HeroSection() {
           {/* Badge */}
           <motion.div variants={fadeUp}>
             <span className="inline-flex items-center gap-2 font-body text-xs font-semibold tracking-widest uppercase text-brand-yellow border border-brand-yellow/30 bg-brand-yellow/10 px-4 py-1.5">
-              🎬 Video Online · เรียนได้ทันที · ดูซ้ำได้ไม่จำกัด · {COURSE_CONFIG.seats} คนแรก Early Bird
+              {MODE.badge}{MODE.seats ? ` · ${MODE.seats} ที่นั่งแรก` : ""}
             </span>
           </motion.div>
 
@@ -94,22 +94,38 @@ export default function HeroSection() {
             สำหรับคนที่อยากสร้างเว็บและระบบของตัวเองได้จริง… ตั้งแต่หน้าบ้านถึงหลังบ้าน ด้วย Claude Code
           </motion.p>
 
+          {/* Pre-register banner — โชว์เฉพาะรอบลงทะเบียนล่วงหน้า */}
+          {MODE.preRegisterBanner && (
+            <motion.div
+              variants={fadeUp}
+              className="max-w-xl border border-brand-yellow/30 bg-brand-yellow/10 px-5 py-3"
+            >
+              <p className="font-body text-brand-warm/80 text-sm leading-relaxed">
+                {MODE.preRegisterBanner}
+              </p>
+            </motion.div>
+          )}
+
           {/* Date + countdown */}
           <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
             <div className="font-body text-brand-warm/60 text-sm">
-              <span className="text-brand-warm font-semibold">{COURSE_CONFIG.date}</span>
-              <span className="ml-2 text-brand-warm/40">· {COURSE_CONFIG.platform}</span>
+              <span className="text-brand-warm font-semibold">{MODE.date}</span>
+              <span className="ml-2 text-brand-warm/40">· {MODE.platform}</span>
             </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-body text-brand-warm/30 text-xs">จะปรับราคาขึ้นใน</span>
-              <Countdown target={COURSE_CONFIG.eventDate} />
-            </div>
+            {MODE.showCountdown && (
+              <div className="flex flex-col gap-1">
+                <span className="font-body text-brand-warm/30 text-xs">
+                  {MODE.priceMode === "earlyBird" ? "จะปรับราคาขึ้นใน" : "ปิดรับใน"}
+                </span>
+                <Countdown target={COURSE_CONFIG.eventDate} />
+              </div>
+            )}
           </motion.div>
 
           {/* Platform note */}
           <motion.div variants={fadeUp} className="flex items-center gap-2">
             <span className="text-brand-warm/30 text-sm">🎬</span>
-            <p className="font-body text-brand-warm/40 text-xs">{COURSE_CONFIG.platformNote}</p>
+            <p className="font-body text-brand-warm/40 text-xs">{MODE.platformNote}</p>
           </motion.div>
 
           {/* CTA */}
@@ -120,11 +136,15 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               className="inline-block font-display font-bold text-base md:text-lg px-8 py-4 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              ซื้อคอร์ส Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
+              {MODE.ctaLabel} {ACTIVE_PRICE.toLocaleString()} ฿ →
             </motion.a>
             <div className="font-body text-brand-warm/50 text-sm self-center">
-              <s className="text-brand-warm/30">ปกติ {COURSE_CONFIG.pricing.regular.toLocaleString()} ฿</s>
-              <span className="ml-2 text-brand-warm/60">· รับ {COURSE_CONFIG.seats} คนแรกเท่านั้น</span>
+              {MODE.priceMode === "earlyBird" && (
+                <s className="text-brand-warm/30">ปกติ {COURSE_CONFIG.pricing.regular.toLocaleString()} ฿</s>
+              )}
+              {MODE.seats && (
+                <span className="ml-2 text-brand-warm/60">· รับ {MODE.seats} ที่นั่งแรกเท่านั้น</span>
+              )}
             </div>
           </motion.div>
         </motion.div>

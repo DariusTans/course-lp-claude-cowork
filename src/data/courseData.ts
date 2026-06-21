@@ -1,56 +1,118 @@
+// ───────────────────────────────────────────────────────────
+// โหมดของคอร์ส — สลับ position ได้ที่ activeMode บรรทัดเดียว
+//   "pre-register"  → รอบลงทะเบียนล่วงหน้า
+//   "online-video"  → รอบซื้อวิดีโอราคาปกติ
+//   "online-zoom"   → รอบสอนสด Workshop ผ่าน Zoom
+// ───────────────────────────────────────────────────────────
+export type CourseMode = "pre-register" | "online-video" | "online-zoom"
+
+export const activeMode: CourseMode = "pre-register"
+
+export const MODES = {
+  "pre-register": {
+    // badge บน Hero
+    badge: "🔖 รอบลงทะเบียนล่วงหน้า · สิทธิ์ราคาพิเศษก่อนใคร",
+    // ป้ายแจ้งชัดเจนว่าเป็นการลงทะเบียนล่วงหน้า (โชว์เฉพาะโหมดนี้)
+    preRegisterBanner:
+      "นี่คือรอบ “ลงทะเบียนล่วงหน้า” (Pre-Register) — จองสิทธิ์ราคาพิเศษไว้ก่อน แล้วเริ่มเรียนได้จริงวันที่ 30 มิ.ย. 2026 (ทีมงานจะติดต่อยืนยันและส่งรายละเอียดให้ทางอีเมล)",
+    date: "เริ่มเรียนได้ 30 มิ.ย. 2026",
+    time: "ลงทะเบียนล่วงหน้าวันนี้ · รับราคาพิเศษก่อนเปิดจริง",
+    platform: "Pre-Register — ล็อกราคาก่อนใคร",
+    platformNote: "ลงทะเบียนล่วงหน้าเพื่อล็อกราคาพิเศษ เริ่มเรียนได้จริง 30 มิ.ย. 2026 — ทีมงานจะติดต่อกลับเพื่อยืนยันสิทธิ์",
+    seats: 20 as number | null,
+    showCountdown: true,
+    priceMode: "earlyBird" as "earlyBird" | "regular",
+    ctaLabel: "ลงทะเบียนล่วงหน้า — ล็อกราคา",
+    ctaShort: "ลงทะเบียนล่วงหน้า",
+    notice: "🔖 ลงทะเบียนล่วงหน้าเพื่อล็อกราคาพิเศษ · ทีมงานจะติดต่อกลับยืนยันสิทธิ์",
+  },
+  "online-video": {
+    badge: "🎬 Video Online · เรียนได้ทันที · ดูซ้ำได้ไม่จำกัด",
+    preRegisterBanner: null as string | null,
+    date: "คอร์สวิดีโออัดไว้ เรียนได้ทันที",
+    time: "เรียนได้ตลอดเวลา ไม่มีหมดอายุ",
+    platform: "Video Online — เรียนได้ทุกที่ทุกเวลา",
+    platformNote: "เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน สามารถกลับมาดูซ้ำได้ไม่จำกัด",
+    seats: null as number | null,
+    showCountdown: false,
+    priceMode: "regular" as "earlyBird" | "regular",
+    ctaLabel: "ซื้อคอร์ส Video Online",
+    ctaShort: "ซื้อคอร์ส",
+    notice: "🔒 เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน · ดูซ้ำได้ไม่จำกัด",
+  },
+  "online-zoom": {
+    badge: "🟢 สอนสดผ่าน Zoom · Workshop จำกัดที่นั่ง",
+    preRegisterBanner: null as string | null,
+    date: "31 พ.ค. 2026 · 09:00–17:00 น.",
+    time: "สอนสดผ่าน Zoom — ถาม-ตอบได้ real-time",
+    platform: "Online Zoom — Live Workshop",
+    platformNote: "เรียนสดพร้อมกันผ่าน Zoom พร้อมไฟล์บันทึกย้อนหลังให้ดูซ้ำ · ที่นั่งจำกัด",
+    seats: 30 as number | null,
+    showCountdown: true,
+    priceMode: "earlyBird" as "earlyBird" | "regular",
+    ctaLabel: "จองที่นั่ง Workshop สด",
+    ctaShort: "จองที่นั่ง",
+    notice: "🟢 สอนสดผ่าน Zoom · ที่นั่งจำกัด · มีไฟล์บันทึกย้อนหลังให้",
+  },
+} as const
+
 export const COURSE_CONFIG = {
   title: "สร้างระบบใช้เองใน 1 วัน",
   tagline: "ครบจบทั้งหน้าบ้านและหลังบ้านด้วย Claude Code",
-  tools: ["Claude", "Claude Code", "Claude Cowork"] as const,
-  date: "คอร์สวิดีโออัดไว้ เรียนได้ทันที",
-  time: "เรียนได้ตลอดเวลา ไม่มีหมดอายุ",
-  platform: "Video Online — เรียนได้ทุกที่ทุกเวลา",
-  platformNote: "เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน สามารถกลับมาดูซ้ำได้ไม่จำกัด",
-  seats: 50,
+  tools: ["Claude", "Claude Code"] as const,
   pricing: {
     earlyBird: 1550,
     regular: 3300,
   },
-  eventDate: new Date("2026-05-31T23:59:00+07:00"),
-  registerUrl: "https://forms.gle/s3XrhBMUZTEJD2Lz6",
+  eventDate: new Date("2026-06-30T23:59:00+07:00"),
+  registerUrl: "https://forms.gle/83aPp8AnZKC7YYP17",
   contactEmail: "phonratichai.influencer@gmail.com",
 }
+
+// MODE = ข้อมูลของโหมดที่ active อยู่ — component ดึงจากตัวนี้
+export const MODE = MODES[activeMode]
+
+// ราคาที่ใช้แสดงตามโหมด (earlyBird / regular)
+export const ACTIVE_PRICE = COURSE_CONFIG.pricing[MODE.priceMode]
 
 export const CURRICULUM = [
   {
     session: 1,
-    time: "Part 1",
+    time: "ช่วงที่ 0 · 15 นาที",
     tool: null,
-    title: "Pre-Setup & Introduction",
-    description: "เตรียม environment ให้พร้อมก่อนเริ่ม และเห็นภาพรวมว่าตลอดคอร์สเราจะสร้างอะไรขึ้นมาบ้าง",
+    title: "ก่อนเริ่ม: ปรับมุมคิด",
+    description:
+      "ทำความเข้าใจว่าทำไมวันนี้เจ้าของธุรกิจสร้างระบบเองได้แล้ว, “หน้าบ้าน” กับ “หลังบ้าน” คืออะไรในภาษาคนทั่วไป และทำไม “การแก้ให้เป็น” สำคัญกว่า “การสร้าง”",
     outcomes: [
-      "ติดตั้ง Claude Code, VSCode, Git, Node ครบถ้วน",
-      "เข้าใจเป้าหมายหลัก — สร้างของจริงทั้งหน้าบ้านและหลังบ้านด้วย Claude Code",
-      "เห็น outline ทั้งคอร์ส และรู้ว่าจะเอาทักษะไปต่อยอดอะไรได้บ้าง",
+      "เห็นภาพว่าทั้งวันเราจะได้ระบบจัดการสต็อกของจริงในมือ",
+      "เข้าใจคำว่าหน้าบ้าน-หลังบ้านแบบไม่ต้องมีพื้นฐานเทคนิค",
+      "รู้ว่า Claude Code เข้ามาช่วยให้คนไม่เขียนโค้ดสร้างระบบได้อย่างไร",
     ],
   },
   {
     session: 2,
-    time: "Part 2",
-    tool: "Claude",
-    title: "Basic Claude & Claude Cowork",
-    description: "เรียนรู้หลักการเขียน Prompt ที่ถูกต้อง และการทำงานร่วมกับ Claude แบบ workflow จริง เชื่อมต่อ MCP (Google, Calendar, Canva) และ Skills ที่น่าสนใจ",
+    time: "ช่วงที่ 1 · 45 นาที",
+    tool: "Claude Code",
+    title: "ติดตั้งและสั่งงานให้เป็น",
+    description:
+      "ติดตั้ง Claude Code ทีละขั้นแบบทำตามได้จริง พร้อมหลักการ “สั่งงานแบบคนสร้างจริง” — บอก AI ให้ได้สิ่งที่ต้องการตั้งแต่ครั้งแรก ไม่ใช่ vibe มั่ว ๆ แล้วค้างกลางทาง",
     outcomes: [
-      "เข้าใจหลักการเขียน Prompt ได้ภาพชัดเจน",
-      "เชื่อมต่อ MCP ต่างๆ เข้ากับ workflow ได้",
-      "รู้จัก Claude Skills และนำไปใช้งานต่อยอดได้",
+      "ติดตั้ง Claude Code บนเครื่องตัวเองได้สำเร็จ",
+      "รู้วิธีสั่งงาน Claude Code ให้ตรงเป้าตั้งแต่ครั้งแรก",
+      "เข้าใจว่าจะบอกอะไร AI บ้างเวลาอยากได้ระบบสักอย่าง",
     ],
   },
   {
     session: 3,
-    time: "Part 3",
+    time: "ช่วงที่ 2 · 60 นาที",
     tool: "Claude Code",
-    title: "Basic Claude Code",
-    description: "เริ่มต้นใช้งาน Claude Code ใน local machine พร้อม tips สำหรับการ optimize token ให้ประหยัดและมีประสิทธิภาพ",
+    title: "วางหลังบ้าน: ที่เก็บข้อมูลที่ไม่หาย",
+    description:
+      "ออกแบบโครงสร้างข้อมูลสต็อก (สินค้า, จำนวน, ราคา, วันที่) แล้วใช้ Claude Code สร้างที่เก็บข้อมูลให้ปลอดภัยไม่หายเกลี้ยงเหมือนทำใน Excel พร้อมเข้าใจว่าข้อมูลไหลไปไหนเวลากรอกของเข้า-ออก",
     outcomes: [
-      "ใช้ Claude Code ใน local ได้อย่างคล่องแคล่ว",
-      "รู้เทคนิค token optimization ที่ช่วยลด cost",
-      "เข้าใจ workflow การทำงานกับ Claude Code จริงๆ",
+      "ออกแบบได้ว่าระบบสต็อกต้องเก็บข้อมูลอะไรบ้าง",
+      "ใช้ Claude Code สร้างที่เก็บข้อมูลที่ปลอดภัย ไม่หาย",
+      "เห็นภาพการไหลของข้อมูลเวลาของเข้า-ออก",
     ],
   },
   {
@@ -63,50 +125,54 @@ export const CURRICULUM = [
   },
   {
     session: 4,
-    time: "Part 4",
+    time: "ช่วงที่ 3 · 60 นาที",
     tool: "Claude Code",
-    title: "สร้าง Landing Page หน้าบ้าน (พร้อมหลักการวางแผนงาน)",
-    description: "เริ่มจากวาง CLAUDE.md และ planning idea ให้เป็นระบบ แล้วลงมือ vibe code สร้าง Landing Page จริง — เน้นให้เห็น 'หลักการ' ของการแตกงาน วาง component และทำ responsive ที่นำไปสร้างเว็บแบบอื่นได้เอง",
+    title: "สร้างหน้าบ้าน: ฟอร์มที่ใช้งานจริง",
+    description:
+      "ใช้ Claude Code สร้างหน้าจอกรอกของเข้า-ออกที่พนักงานกดใช้ได้เลย เชื่อมฟอร์มเข้ากับหลังบ้านที่วางไว้ แล้วทดสอบว่ายอดตรงกับของจริงทุกครั้ง",
     outcomes: [
-      "วาง CLAUDE.md และ planning งานให้ Claude Code เข้าใจ context ได้",
-      "สร้าง Landing Page จริงตั้งแต่ section, component จนถึง responsive",
-      "จับหลักการสร้าง UI ที่ปรับไปเป็นเว็บอื่น (portfolio, สินค้า, service) ได้เอง",
+      "ได้หน้าฟอร์มรับเข้า-จ่ายออกที่ใช้งานได้จริง",
+      "เชื่อมหน้าบ้านเข้ากับหลังบ้านให้ข้อมูลตรงกัน",
+      "รู้วิธีให้ Claude Code ปรับหน้าจอจนใช้งานสะดวก",
     ],
   },
   {
     session: 5,
-    time: "Part 5",
+    time: "ช่วงที่ 4 · 45 นาที",
     tool: "Claude Code",
-    title: "สร้างระบบจัดการหลังบ้าน — Stock Management",
-    description: "ลงมือสร้างระบบหลังบ้านจริงด้วยตัวอย่าง Stock Management — ครอบคลุมการออกแบบ data model, CRUD, การจัดการ state และหน้าจอจัดการข้อมูล โดยเน้น pattern ที่เอาไปทำ admin / dashboard / ระบบจัดการอะไรก็ได้",
+    title: "แดชบอร์ด + แจ้งเตือนอัตโนมัติ",
+    description:
+      "สร้างหน้าสรุปยอดคงเหลือและมูลค่าสต็อกรวมที่เห็นครบในจอเดียว ตั้งแจ้งเตือนของใกล้หมดให้ระบบเตือนเอง และออกรายงานส่งหัวหน้าได้ในไม่กี่คลิก",
     outcomes: [
-      "ออกแบบ data model และทำ CRUD (เพิ่ม/ลบ/แก้/ดู) ได้ครบ",
-      "เข้าใจการจัดการ state และการเชื่อมหน้าจอกับข้อมูลจริง",
-      "จับ pattern ระบบหลังบ้านที่ใช้ซ้ำได้กับ booking, CRM, order ฯลฯ",
+      "มีแดชบอร์ดเห็นยอดคงเหลือ + มูลค่าสต็อกในจอเดียว",
+      "ตั้งระบบแจ้งเตือนของใกล้หมดแบบอัตโนมัติ",
+      "ออกรายงานสรุปส่งหัวหน้าได้ในไม่กี่คลิก",
     ],
   },
   {
     session: 6,
-    time: "Part 6",
-    tool: "Vercel",
-    title: "Vercel Deployment (1 ชั่วโมง)",
-    description: "นำงานที่สร้างขึ้น deploy ขึ้น production จริงด้วย Vercel พร้อมปูพื้นฐานสำคัญเรื่องสถาปัตยกรรมและการเลือก stack — เพื่อให้ตัดสินใจเองเป็นในโปรเจกต์ถัดไป",
+    time: "ช่วงที่ 5 · 45 นาที",
+    tool: "Claude Code",
+    title: "แก้บั๊กเป็น คือหัวใจ",
+    description:
+      "เรียนรู้วิธีอ่านอาการเวลาระบบพัง รู้ว่าจะเริ่มแก้ตรงไหน และสั่ง Claude Code ให้ช่วยแก้แบบตรงจุด ไม่เสียเวลาทั้งวันกับ bug เดียว — ทักษะที่ทำให้คุณมีระบบใช้เองได้จริงในระยะยาว",
     outcomes: [
-      "เข้าใจความต่างของ Frontend, Backend และ Database ว่าแต่ละส่วนทำหน้าที่อะไร",
-      "รู้หลักการเลือก Stack ในการพัฒนาให้เหมาะกับงาน",
-      "รู้ว่า Vercel ทำอะไรได้และทำอะไรไม่ได้ — deploy งานขึ้นจริงได้สำเร็จ",
+      "อ่านอาการเวลาระบบพังได้ว่าปัญหาน่าจะอยู่ตรงไหน",
+      "สั่ง Claude Code ให้ช่วยแก้แบบตรงจุด",
+      "ดูแลระบบของตัวเองต่อได้ ไม่ต้องพึ่งคนอื่นทุกครั้ง",
     ],
   },
   {
     session: 7,
-    time: "Part 7",
-    tool: "Q&A",
-    title: "Roadmap & Next Steps",
-    description: "สรุปสิ่งที่ได้เรียน และวางแผนว่าจะนำทักษะการสร้างหน้าบ้าน-หลังบ้านไปต่อยอดเป็นโปรเจกต์ของตัวเองอย่างไร",
+    time: "ช่วงที่ 6 · 30 นาที",
+    tool: "Claude Code",
+    title: "ต่อยอดไม่จำกัด",
+    description:
+      "เห็นว่า pattern เดียวกับระบบสต็อกนี้เอาไปทำระบบลูกค้า, ออเดอร์, นัดหมาย ได้อย่างไร พร้อมแนวทางพัฒนาระบบสต็อกต่อหลังจบคอร์สด้วยตัวเอง",
     outcomes: [
-      "มีทั้ง Landing Page และระบบหลังบ้านที่ deploy ขึ้นจริงแล้ว",
-      "รู้ step ถัดไปในการต่อยอดไปสร้าง product อื่นๆ ด้วยตัวเอง",
-      "มี roadmap ชัดสำหรับการพัฒนาต่อหลังคอร์ส",
+      "รู้ว่าวิธีเดียวกันนี้เอาไปทำระบบลูกค้า/ออเดอร์/นัดหมายได้",
+      "มีแนวทางพัฒนาระบบสต็อกต่อหลังจบคอร์ส",
+      "กลับไปสร้างระบบของตัวเองด้วย Claude Code ได้เอง",
     ],
   },
 ]

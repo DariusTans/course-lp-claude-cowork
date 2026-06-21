@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { COURSE_CONFIG } from "../data/courseData"
+import { COURSE_CONFIG, MODE } from "../data/courseData"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,9 +27,11 @@ export default function Navbar() {
           <a href="#curriculum" className="font-body text-brand-warm/70 hover:text-brand-warm text-sm transition-colors">
             Curriculum
           </a>
+          {/* ซ่อนไว้ก่อนพร้อม SkillSection
           <a href="#skills" className="font-body text-brand-warm/70 hover:text-brand-warm text-sm transition-colors">
             Skills
           </a>
+          */}
           <a href="#pricing" className="font-body text-brand-warm/70 hover:text-brand-warm text-sm transition-colors">
             ราคา
           </a>
@@ -37,7 +39,7 @@ export default function Navbar() {
             href={COURSE_CONFIG.registerUrl}
             className="font-body font-semibold text-sm px-5 py-2.5 border border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-all duration-200"
           >
-            ซื้อคอร์ส Early Bird
+            {MODE.ctaShort}
           </a>
         </div>
 
@@ -61,14 +63,14 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-brand-dark/95 backdrop-blur-md border-t border-black/10 px-6 py-4 flex flex-col gap-4">
           <a href="#curriculum" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>Curriculum</a>
-          <a href="#skills" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>Skills</a>
+          {/* <a href="#skills" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>Skills</a> */}
           <a href="#pricing" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>ราคา</a>
           <a
             href={COURSE_CONFIG.registerUrl}
             className="font-body font-semibold text-sm px-5 py-2.5 border border-brand-orange text-brand-orange text-center"
             onClick={() => setMenuOpen(false)}
           >
-            ซื้อคอร์ส Early Bird
+            {MODE.ctaShort}
           </a>
         </div>
       )}

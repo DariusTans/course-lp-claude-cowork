@@ -1,13 +1,13 @@
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
-import { COURSE_CONFIG } from "../data/courseData"
+import { COURSE_CONFIG, MODE } from "../data/courseData"
 
 const earlyBirdFeatures = [
   "วิดีโอ recording จากการสอน live จริง",
-  "เรียน Claude · Claude Code · Claude Cowork",
+  "เรียน Claude · Claude Code",
   "ดูซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ",
   "Pre-setup guide พร้อม Claude Code Skills แจก",
-  "เรียนได้ทันทีหลังชำระเงิน",
+  "ได้ระบบจัดการสต็อกของจริงในมือ",
 ]
 
 export default function PricingSection() {
@@ -38,11 +38,13 @@ export default function PricingSection() {
             transition={{ delay: 0.1 }}
             className="relative border-2 border-brand-yellow bg-brand-yellow/5 p-8 flex flex-col gap-6"
           >
-            <div className="absolute -top-3 left-6">
-              <span className="font-body text-xs font-bold bg-brand-orange text-white px-3 py-1">
-                🔥 {COURSE_CONFIG.seats} คนแรกเท่านั้น
-              </span>
-            </div>
+            {MODE.seats && (
+              <div className="absolute -top-3 left-6">
+                <span className="font-body text-xs font-bold bg-brand-orange text-white px-3 py-1">
+                  🔥 {MODE.seats} ที่นั่งแรกเท่านั้น
+                </span>
+              </div>
+            )}
 
             <div>
               <p className="font-body text-brand-yellow text-sm font-semibold mb-2">Early Bird</p>
@@ -75,7 +77,7 @@ export default function PricingSection() {
               whileTap={{ scale: 0.98 }}
               className="mt-auto block font-display font-bold text-center py-4 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              ซื้อคอร์ส Early Bird →
+              {MODE.ctaLabel} →
             </motion.a>
 
             <p className="font-body text-brand-warm/40 text-xs text-center">
@@ -146,7 +148,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center font-body text-brand-warm/40 text-sm mt-4"
         >
-          🔒 เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน · ดูซ้ำได้ไม่จำกัด
+          {MODE.notice}
         </motion.p>
       </div>
     </section>

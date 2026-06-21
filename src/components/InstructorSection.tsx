@@ -127,7 +127,7 @@ export default function InstructorSection() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="font-body text-2xl">🤖</span>
-                <p className="font-body text-brand-warm/80">ผู้เชี่ยวชาญ Claude · Claude Code · Claude Cowork จากหลักการสร้างสู้ใช้งานจริง</p>
+                <p className="font-body text-brand-warm/80">ผู้เชี่ยวชาญ Claude · Claude Code จากหลักการสร้างสู่ใช้งานจริง</p>
               </div>
             </div>
 

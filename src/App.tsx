@@ -2,7 +2,8 @@ import Navbar from "./components/Navbar"
 import HeroSection from "./components/HeroSection"
 import PainSection from "./components/PainSection"
 import WhatYouGetSection from "./components/WhatYouGetSection"
-import SkillSection from "./components/SkillSection"
+import DemoSection from "./components/DemoSection"
+// import SkillSection from "./components/SkillSection" // ซ่อนไว้ก่อน — รอคิดเนื้อหาใหม่มาแทน
 import CurriculumSection from "./components/CurriculumSection"
 import InstructorSection from "./components/InstructorSection"
 import ReviewSection from "./components/ReviewSection"
@@ -18,7 +19,8 @@ export default function App() {
       <HeroSection />
       <PainSection />
       <WhatYouGetSection />
-      <SkillSection />
+      <DemoSection />
+      {/* <SkillSection /> */}
       <CurriculumSection />
       <InstructorSection />
       <ReviewSection />

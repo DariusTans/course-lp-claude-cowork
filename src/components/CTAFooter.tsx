@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { COURSE_CONFIG } from "../data/courseData"
+import { COURSE_CONFIG, MODE, ACTIVE_PRICE } from "../data/courseData"
 
 export default function CTAFooter() {
   return (
@@ -25,10 +25,14 @@ export default function CTAFooter() {
               <span className="text-brand-yellow">ลงมือทำสักที</span>
             </h2>
             <p className="font-body text-brand-warm/50 text-lg">
-              {COURSE_CONFIG.date} · {COURSE_CONFIG.time}
+              {MODE.date} · {MODE.time}
               <br />
-              Early Bird <span className="text-brand-yellow font-semibold">{COURSE_CONFIG.seats} คนแรก</span> · ราคา{" "}
-              <span className="text-brand-orange font-semibold">{COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿</span>
+              {MODE.seats && (
+                <>
+                  <span className="text-brand-yellow font-semibold">{MODE.seats} ที่นั่งแรก</span> ·{" "}
+                </>
+              )}
+              ราคา <span className="text-brand-orange font-semibold">{ACTIVE_PRICE.toLocaleString()} ฿</span>
             </p>
           </motion.div>
 
@@ -46,7 +50,7 @@ export default function CTAFooter() {
               transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
               className="inline-block font-display font-bold text-lg md:text-xl px-10 py-5 bg-brand-orange text-white hover:bg-brand-orange/90 transition-colors"
             >
-              ซื้อคอร์ส Early Bird {COURSE_CONFIG.pricing.earlyBird.toLocaleString()} ฿ →
+              {MODE.ctaLabel} {ACTIVE_PRICE.toLocaleString()} ฿ →
             </motion.a>
           </motion.div>
 
@@ -56,7 +60,7 @@ export default function CTAFooter() {
             viewport={{ once: true }}
             className="font-body text-brand-warm/30 text-xs"
           >
-            🔒 เข้าถึงวิดีโอได้ทันทีหลังชำระเงิน · ดูซ้ำได้ไม่จำกัด · PromptPay · โอนธนาคาร · บัตรเครดิต
+            {MODE.notice} · PromptPay · โอนธนาคาร · บัตรเครดิต
           </motion.p>
         </div>
       </section>
@@ -67,7 +71,7 @@ export default function CTAFooter() {
           <div>
             <p className="font-display font-bold text-brand-yellow text-lg">CLAUDE CODE - Build Real</p>
             <p className="font-body text-brand-warm/30 text-xs mt-1">
-              เรียนรู้ Claude · Claude Code · Claude Cowork
+              เรียนรู้ Claude · Claude Code
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
@@ -90,7 +94,7 @@ export default function CTAFooter() {
             </div>
           </div>
           <p className="font-body text-brand-warm/20 text-xs">
-            © 2026 Claude Cowork. All rights reserved.
+            © 2026 Build Real. All rights reserved.
           </p>
         </div>
       </footer>
