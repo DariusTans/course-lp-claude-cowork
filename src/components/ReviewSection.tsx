@@ -13,7 +13,7 @@ const reviews = [
 
 function VideoBlock() {
   return (
-    <div className="w-full h-[480px] bg-black border border-white/10 flex items-center justify-center overflow-hidden">
+    <div className="w-full h-[480px] bg-black border border-black/10 flex items-center justify-center overflow-hidden">
       <video
         src={VIDEO_SRC}
         controls
@@ -25,7 +25,7 @@ function VideoBlock() {
 
 export default function ReviewSection() {
   return (
-    <section className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6">
+    <section className="bg-brand-panel border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -66,7 +66,7 @@ export default function ReviewSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex gap-4 p-4 border border-white/8 bg-white/3 hover:bg-white/5 transition-colors"
+                  className="flex gap-4 p-4 border border-black/8 bg-black/3 hover:bg-black/5 transition-colors"
                 >
                   {/* Avatar initial */}
                   <div className="flex-shrink-0 w-9 h-9 rounded-full bg-brand-yellow/20 border border-brand-yellow/30 flex items-center justify-center">
@@ -89,7 +89,7 @@ export default function ReviewSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="relative">
-              <div className="w-full h-[480px] border border-white/10 overflow-hidden">
+              <div className="w-full h-[480px] border border-black/10 overflow-hidden">
                 <img
                   src={REVIEW_IMAGE}
                   alt="Review"

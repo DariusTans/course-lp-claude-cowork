@@ -91,7 +91,7 @@ export default function HeroSection() {
 
           {/* Sub-headline */}
           <motion.p variants={fadeUp} className="font-body text-brand-warm/70 text-lg md:text-xl max-w-xl leading-relaxed">
-            สำหรับคนที่มีไอเดียอยากสร้างอะไรสักอย่าง… แต่ยังไม่รู้จะเริ่มยังไงให้มันเกิดขึ้นจริง
+            สำหรับคนที่อยากสร้างเว็บและระบบของตัวเองได้จริง… ตั้งแต่หน้าบ้านถึงหลังบ้าน ด้วย Claude Code
           </motion.p>
 
           {/* Date + countdown */}

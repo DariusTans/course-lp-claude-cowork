@@ -5,10 +5,11 @@ export default {
     extend: {
       colors: {
         brand: {
-          yellow: "#F5C542",
-          orange: "#FF4D00",
-          dark: "#0A0A0A",
-          warm: "#F0EDE8",
+          yellow: "#D97757",
+          orange: "#C15F3C",
+          dark: "#F1EDE5",
+          warm: "#2B2520",
+          panel: "#E8E2D6",
         },
       },
       fontFamily: {

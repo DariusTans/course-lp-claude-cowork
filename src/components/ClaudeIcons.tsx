@@ -4,7 +4,7 @@ export { SiClaude, SiAnthropic, SiClaudeHex, SiAnthropicHex }
 
 // Tool badge with official brand icon
 interface ToolBadgeProps {
-  tool: "Claude" | "Claude Code" | "Claude Cowork" | "Skill" | "Q&A"
+  tool: "Claude" | "Claude Code" | "Claude Cowork" | "Vercel" | "Skill" | "Q&A"
   size?: "sm" | "md"
 }
 
@@ -24,8 +24,14 @@ const toolConfig = {
   "Claude Cowork": {
     label: "Claude Cowork",
     Icon: SiAnthropic,
-    color: "#F5C542",
+    color: "#D97757",
     wrapperClass: "bg-brand-yellow/20 text-brand-yellow border-brand-yellow/30",
+  },
+  Vercel: {
+    label: "Vercel",
+    Icon: null,
+    color: "",
+    wrapperClass: "bg-black/10 text-brand-warm border-black/30",
   },
   Skill: {
     label: "Skill",
@@ -37,7 +43,7 @@ const toolConfig = {
     label: "Q&A",
     Icon: null,
     color: "",
-    wrapperClass: "bg-white/10 text-brand-warm/60 border-white/20",
+    wrapperClass: "bg-black/10 text-brand-warm/60 border-black/20",
   },
 } as const
 

@@ -4,7 +4,7 @@ import { ArrowRight, Clock, Zap } from "lucide-react"
 
 export default function SkillSection() {
   return (
-    <section id="skills" className="bg-brand-dark border-t border-white/5 py-24 px-6">
+    <section id="skills" className="bg-brand-dark border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -50,7 +50,7 @@ export default function SkillSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="border border-white/10 bg-white/3 p-6 flex flex-col gap-5 group hover:border-brand-orange/40 transition-all"
+              className="border border-black/10 bg-black/3 p-6 flex flex-col gap-5 group hover:border-brand-orange/40 transition-all"
             >
               {/* Top */}
               <div className="flex items-start justify-between">
@@ -72,7 +72,7 @@ export default function SkillSection() {
               </div>
 
               {/* Before / After */}
-              <div className="border-t border-white/8 pt-4 flex items-center gap-3">
+              <div className="border-t border-black/8 pt-4 flex items-center gap-3">
                 <div className="flex items-center gap-1.5 font-body text-xs text-brand-warm/40">
                   <Clock className="w-3 h-3" />
                   <s>{skill.before}</s>
@@ -89,7 +89,7 @@ export default function SkillSection() {
                 {skill.useCases.map((uc) => (
                   <span
                     key={uc}
-                    className="font-body text-xs px-2 py-0.5 bg-white/5 border border-white/10 text-brand-warm/50"
+                    className="font-body text-xs px-2 py-0.5 bg-black/5 border border-black/10 text-brand-warm/50"
                   >
                     {uc}
                   </span>
@@ -117,7 +117,7 @@ export default function SkillSection() {
               <span className="text-brand-warm/80">สร้างครั้งเดียว ทั้งทีมใช้ได้ ไม่ต้องสอนซ้ำ</span>
             </p>
           </div>
-          <div className="flex-shrink-0 border-l border-white/10 md:pl-8">
+          <div className="flex-shrink-0 border-l border-black/10 md:pl-8">
             <p className="font-body text-brand-warm/50 text-xs mb-1">เป้าหมายของคอร์สนี้</p>
             <p className="font-display font-bold text-brand-yellow text-sm">
               คุณจะสร้าง Skill ของตัวเอง<br />อย่างน้อย 1 ตัวได้เลย

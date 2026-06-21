@@ -3,7 +3,7 @@ import { COURSE_CONFIG } from "../data/courseData"
 
 export default function FreePreviewSection() {
   return (
-    <section id="free-preview" className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6">
+    <section id="free-preview" className="bg-brand-panel border-t border-black/5 py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function FreePreviewSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="relative w-full aspect-video border border-white/10 overflow-hidden"
+          className="relative w-full aspect-video border border-black/10 overflow-hidden"
         >
           <iframe
             src="https://www.youtube.com/embed/PbrCzrTqMN4?start=1165"
@@ -48,7 +48,7 @@ export default function FreePreviewSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10 bg-white/3 px-6 py-5"
+          className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-black/10 bg-black/3 px-6 py-5"
         >
           <div className="flex flex-col gap-1 text-center md:text-left">
             <p className="font-body text-brand-warm/80 text-sm">

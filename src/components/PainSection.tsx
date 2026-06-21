@@ -38,7 +38,7 @@ const fadeUp = {
 
 export default function PainSection() {
   return (
-    <section className="bg-brand-dark border-t border-white/5 py-24 px-6">
+    <section className="bg-brand-dark border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export default function PainSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="border border-white/10 bg-white/3 p-8 flex flex-col gap-4 hover:border-brand-yellow/30 transition-colors"
+              className="border border-black/10 bg-black/3 p-8 flex flex-col gap-4 hover:border-brand-yellow/30 transition-colors"
             >
               <span className="text-4xl">{pain.emoji}</span>
               <p className="font-body text-brand-warm font-semibold text-base">{pain.heading}</p>
@@ -112,7 +112,7 @@ export default function PainSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-12 border border-white/10 bg-white/3 p-8 text-center"
+          className="mt-12 border border-black/10 bg-black/3 p-8 text-center"
         >
           <p className="font-body text-brand-warm/60 text-base mb-2">🔥 สุดท้ายมันจบที่</p>
           <p className="font-display font-bold text-xl md:text-2xl text-brand-warm">
@@ -140,7 +140,7 @@ export default function PainSection() {
           </p>
           <p className="font-body text-brand-warm/60 text-base mb-4">ไม่ใช่แค่สอน AI แต่พาคุณ:</p>
           <p className="font-display font-bold text-xl md:text-2xl text-brand-yellow">
-            🔥 จาก "มีไอเดีย" → "มี AI Product + ระบบขายจริง"
+            🔥 จาก "มีไอเดีย" → "สร้างเว็บหน้าบ้าน + ระบบหลังบ้านได้จริง"
           </p>
         </motion.div>
       </div>

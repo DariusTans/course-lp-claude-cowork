@@ -14,12 +14,12 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-brand-dark/90 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+        scrolled ? "bg-brand-dark/90 backdrop-blur-md border-b border-black/10" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="font-display font-bold text-brand-yellow text-xl tracking-tight">
-          CLAUDE CODE - Build & Sell 
+          CLAUDE CODE - Build Real
         </a>
 
         {/* Desktop nav */}
@@ -59,7 +59,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-brand-dark/95 backdrop-blur-md border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-brand-dark/95 backdrop-blur-md border-t border-black/10 px-6 py-4 flex flex-col gap-4">
           <a href="#curriculum" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>Curriculum</a>
           <a href="#skills" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>Skills</a>
           <a href="#pricing" className="font-body text-brand-warm/80 text-sm" onClick={() => setMenuOpen(false)}>ราคา</a>

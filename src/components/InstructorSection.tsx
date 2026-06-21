@@ -38,13 +38,13 @@ function ImageSlider() {
       {/* Prev / Next */}
       <button
         onClick={prev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-white/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-black/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
       >
         <ChevronLeft className="w-4 h-4" />
       </button>
       <button
         onClick={next}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-white/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-brand-dark/70 border border-black/10 text-brand-warm/60 hover:text-brand-warm transition-colors"
       >
         <ChevronRight className="w-4 h-4" />
       </button>
@@ -72,7 +72,7 @@ function ImageSlider() {
 
 export default function InstructorSection() {
   return (
-    <section className="bg-brand-dark border-t border-white/5 py-24 px-6">
+    <section className="bg-brand-dark border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

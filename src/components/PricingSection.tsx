@@ -12,7 +12,7 @@ const earlyBirdFeatures = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6">
+    <section id="pricing" className="bg-brand-panel border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +89,7 @@ export default function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="border border-white/10 bg-white/3 p-8 flex flex-col gap-6 opacity-60"
+            className="border border-black/10 bg-black/3 p-8 flex flex-col gap-6 opacity-60"
           >
             <div>
               <p className="font-body text-brand-warm/50 text-sm font-semibold mb-2">ราคาปกติ</p>
@@ -105,7 +105,7 @@ export default function PricingSection() {
             <ul className="flex flex-col gap-3">
               {earlyBirdFeatures.map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 mt-0.5 w-4 h-4 flex items-center justify-center bg-white/10 text-brand-warm/40">
+                  <span className="flex-shrink-0 mt-0.5 w-4 h-4 flex items-center justify-center bg-black/10 text-brand-warm/40">
                     <Check className="w-2.5 h-2.5" />
                   </span>
                   <span className="font-body text-brand-warm/40 text-sm">{f}</span>
@@ -115,7 +115,7 @@ export default function PricingSection() {
 
             <button
               disabled
-              className="mt-auto block font-display font-bold text-center py-4 border border-white/20 text-brand-warm/30 cursor-not-allowed"
+              className="mt-auto block font-display font-bold text-center py-4 border border-black/20 text-brand-warm/30 cursor-not-allowed"
             >
               เปิดเมื่อ Early Bird เต็ม
             </button>

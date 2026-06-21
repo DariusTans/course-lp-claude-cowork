@@ -8,7 +8,7 @@ export default function CurriculumSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0)
 
   return (
-    <section id="curriculum" className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6">
+    <section id="curriculum" className="bg-brand-panel border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function CurriculumSection() {
             Curriculum
           </p>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-brand-warm leading-tight">
-            เนื้อหาทั้งหมดที่จะได้เรียน
+            สร้างระบบใช้เองใน 1 วัน — หน้าบ้าน + หลังบ้าน ด้วย Claude Code
           </h2>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function CurriculumSection() {
               return (
                 <div
                   key={i}
-                  className="border border-white/5 bg-white/2 px-6 py-4 flex items-center gap-4"
+                  className="border border-black/5 bg-black/2 px-6 py-4 flex items-center gap-4"
                 >
                   <span className="font-body text-brand-warm/30 text-sm">☕ พักกลางวัน</span>
                 </div>
@@ -49,7 +49,7 @@ export default function CurriculumSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 className={`border transition-colors ${
-                  isOpen ? "border-brand-yellow/30 bg-brand-yellow/3" : "border-white/10 bg-white/3 hover:border-white/20"
+                  isOpen ? "border-brand-yellow/30 bg-brand-yellow/3" : "border-black/10 bg-black/3 hover:border-black/20"
                 }`}
               >
                 <button

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(sed -i 's/bg-\\\\[#0D0D0D\\\\]/bg-brand-panel/g' components/*.tsx)",
+      "Bash(sed -i 's/border-white\\\\//border-black\\\\//g' components/*.tsx)",
+      "Bash(sed -i 's/bg-white\\\\//bg-black\\\\//g' components/*.tsx)"
     ]
   }
 }

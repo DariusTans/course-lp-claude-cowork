@@ -7,7 +7,7 @@ export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null)
 
   return (
-    <section className="bg-brand-dark border-t border-white/5 py-24 px-6">
+    <section className="bg-brand-dark border-t border-black/5 py-24 px-6">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export default function FAQSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
               className={`border transition-colors ${
-                openIdx === i ? "border-brand-yellow/30 bg-brand-yellow/3" : "border-white/10 bg-white/3 hover:border-white/20"
+                openIdx === i ? "border-brand-yellow/30 bg-brand-yellow/3" : "border-black/10 bg-black/3 hover:border-black/20"
               }`}
             >
               <button

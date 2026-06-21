@@ -7,7 +7,7 @@ export default function CTAFooter() {
       {/* Final CTA section */}
       <section
         id="register"
-        className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6 relative overflow-hidden"
+        className="bg-brand-panel border-t border-black/5 py-24 px-6 relative overflow-hidden"
       >
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[800px] h-[400px] rounded-full bg-brand-orange/5 blur-[100px]" />
@@ -62,10 +62,10 @@ export default function CTAFooter() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-dark border-t border-white/5 py-10 px-6">
+      <footer className="bg-brand-dark border-t border-black/5 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-display font-bold text-brand-yellow text-lg">CLAUDE CODE - Build & Sell</p>
+            <p className="font-display font-bold text-brand-yellow text-lg">CLAUDE CODE - Build Real</p>
             <p className="font-body text-brand-warm/30 text-xs mt-1">
               เรียนรู้ Claude · Claude Code · Claude Cowork
             </p>

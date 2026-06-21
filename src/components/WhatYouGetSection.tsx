@@ -13,7 +13,7 @@ const outcomes = [
 
 export default function WhatYouGetSection() {
   return (
-    <section className="bg-[#0D0D0D] border-t border-white/5 py-24 px-6">
+    <section className="bg-brand-panel border-t border-black/5 py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,13 +59,13 @@ export default function WhatYouGetSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border border-white/10 bg-white/3 p-8 flex flex-col gap-6"
+            className="border border-black/10 bg-black/3 p-8 flex flex-col gap-6"
           >
             <p className="font-display font-bold text-brand-warm text-lg">เครื่องมือที่คุณจะได้เรียน</p>
             {[
               { name: "Claude", desc: "ผู้ช่วยที่รู้จักบริบทธุรกิจคุณ", iconColor: "#D97757", bgClass: "bg-blue-500/20", Icon: ClaudeIcon },
               { name: "Claude Code", desc: "Build prototype โดยไม่ต้องรู้ code", iconColor: "#a78bfa", bgClass: "bg-purple-500/20", Icon: AnthropicIcon },
-              { name: "Claude Cowork", desc: "Workflow อัตโนมัติสำหรับทีมและธุรกิจ", iconColor: "#F5C542", bgClass: "bg-brand-yellow/20", Icon: AnthropicIcon },
+              { name: "Claude Cowork", desc: "Workflow อัตโนมัติสำหรับทีมและธุรกิจ", iconColor: "#D97757", bgClass: "bg-brand-yellow/20", Icon: AnthropicIcon },
             ].map((tool) => (
               <div key={tool.name} className="flex items-center gap-4">
                 <div className={`w-10 h-10 flex-shrink-0 flex items-center justify-center ${tool.bgClass}`}>
